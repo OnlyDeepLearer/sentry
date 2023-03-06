@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/deep_learning
+    username: doston
+    password: doston123
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update #should change to none
+    open-in-view: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+  messages:
+    always-use-message-format: true
+
+server:
+  port: 8081
+
+sentry:
+  dsn: https://3d40f8d067504082bae54e6a20a62b6e@o4504787422740480.ingest.sentry.io/4504787425886208
+  traces-sample-rate: 1.0
+
+logging:
+  level:
+    org.springframework.web: debug
+    org.hibernate: error
