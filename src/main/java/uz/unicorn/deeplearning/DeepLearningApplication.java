@@ -7,7 +7,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import uz.unicorn.deeplearning.user.UserService;
-import uz.unicorn.deeplearning.user.dto.UserCreateDTO;
 
 @EnableJpaAuditing
 @OpenAPIDefinition
