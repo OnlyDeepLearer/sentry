@@ -25,6 +25,9 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/swagger-ui/**").permitAll();
 //                .antMatchers("/api/user/**").authenticated();
+
+//        http.addFilter(aFilter)
+//                .addFilterAfter(bFilter);
     }
 
 }

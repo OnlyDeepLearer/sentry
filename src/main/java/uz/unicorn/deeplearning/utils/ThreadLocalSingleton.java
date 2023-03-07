@@ -15,6 +15,7 @@ public class ThreadLocalSingleton {
 
     public static void removeUser() {
         remove(USER);
+//        USER.remove();
     }
 
     public static <T> void remove(ThreadLocal<T> threadLocal) {

@@ -55,4 +55,13 @@ public class UserService implements UserDetailsService {
     private User findById(Long id) {
         return repository.findById(id).orElseThrow(() -> new NotFoundException("user.not.found"));
     }
+
+    /*private void test() {
+        ThreadLocalSingleton.getUser();
+        new Thread(() -> {
+            System.out.println("ThreadLocalSingleton.getUser() = " + ThreadLocalSingleton.getUser());
+        }).start();
+        ThreadLocalSingleton.getUser();
+        throw new BadRequestException("bad.request");
+    }*/
 }

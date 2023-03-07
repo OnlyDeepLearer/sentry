@@ -16,4 +16,7 @@ public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificat
     Optional<User> findByToken(String token);
 
     boolean existsByPhone(String phone);
+
+//    @Query(value = "select id, name, blocked from users where phone like :phone")
+//    List<SampleProjection> getAll(String phone "%%" );
 }

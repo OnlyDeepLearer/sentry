@@ -29,6 +29,12 @@ import java.util.Objects;
 @RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
+//    @AfterThrowing(value = "execution(uz.unicorn.deeplearning.*)", throwing = "e")
+//    public void handleNotFoundException(final NotFoundException e) {
+//        Sentry.captureException(e);
+//        logService.logException(e);
+//    }
+
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<?> handleNotFoundException(final NotFoundException ex, HttpServletRequest request) {
         sentryCaptureException(ex, request);
@@ -37,6 +43,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<?> handleBadRequestException(final BadRequestException ex, HttpServletRequest request) {
+        sentryCaptureException(ex, request);
         return getResponseEntity(ex, request, HttpStatus.BAD_REQUEST);
     }
 
